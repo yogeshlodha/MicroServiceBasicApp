@@ -13,14 +13,22 @@ namespace OrderService.Controllers
         {
             this.orderList = [ "Order 1", "Order 2", "Order 3", "Order 4", "Order 5" ];
         }
-        // GET: api/<OrderController>
+       
+        /// <summary>
+        /// Get order list.
+        /// </summary>
+        /// <returns>Return order list.</returns>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return this.orderList;
         }
 
-        // GET api/<OrderController>/5
+       /// <summary>
+       ///  Get specifc order detail.
+       /// </summary>
+       /// <param name="id">Order Id</param>
+       /// <returns>Return specific order item details.</returns>
         [HttpGet("{id}")]
         public string Get(string id)
         {

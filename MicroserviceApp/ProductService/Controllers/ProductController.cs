@@ -13,17 +13,24 @@ namespace ProductService.Controllers
         private string[] productList;
         public ProductController()
         {
-            this.productList = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"];        
+            this.productList = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"];
         }
 
-        // GET: api/<ProductController>
+        /// <summary>
+        ///  Get product list.
+        /// </summary>
+        /// <returns>Return product items</returns>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return productList;
         }
 
-        // GET api/<ProductController>/5
+        /// <summary>
+        ///  Get specific product item.
+        /// </summary>
+        /// <param name="id">Product id</param>
+        /// <returns>Return specific product.</returns>
         [HttpGet("{id}")]
         public string Get(string id)
         {
